@@ -127,7 +127,8 @@ var GRAVITY_PARALLAX_DATA = {"isMobileDevice":"false"};
 
 
       //Parser timezone
-      var tz = /(GMT(\-|\+).*\(.*)\)/.exec(new Date().toString())[0];
+      // var tz = /(GMT(\-|\+).*\(.*)\)/.exec(new Date().toString())[0];
+      var tz = /GMT(\-|\+).{2}/.exec(new Date().toString())[0];
       if (tz !== 'undefined') {
         document.getElementById("timezone").innerHTML = tz;
       } else {
